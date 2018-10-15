@@ -1,0 +1,21 @@
+.deploy_ctype_tip{
+  z-index:99999;
+  width:100%;
+  text-align:center;
+  position:fixed;
+  top:50%;
+  margin-top:-23px;
+  left:0;
+}
+.deploy_ctype_tip p{
+  display:inline-block;
+  padding:5px 10px;
+  border:solid #d6d482 1px;
+  background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+  font-size:16px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 20px;
+  z-index:99999;
+}

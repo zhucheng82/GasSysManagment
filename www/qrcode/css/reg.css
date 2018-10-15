@@ -1,0 +1,28 @@
+
+/* 公用头部 */
+.bge{background-color: #FFF;}
+.hdbox{position:fixed;top:0; left:0;right:0;z-index:99;}
+.hdbox.UCBrowser{position:absolute}
+*html{_background-image:url(about:blank);_background-attachment:fixed;*zoom:1;}
+*html .hdbox{_position:absolute;_top:expression((-500+(document.documentElement.clientHeight ? document.documentElement.clientHeight:document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop:document.body.scrollTop))+'px');*zoom:1;}
+
+.header{height:2.4rem;line-height:2.4rem;background-color:#fff;padding:0 0.5rem;padding:0 0.5rem;z-index:999}
+.header h3{position:absolute;left:3rem;right:3rem;top:0;height:2.4rem;line-height:2.4rem;text-align:center; color:#4d4948; font-size:0.8rem;font-weight:normal;letter-spacing:0.1rem;}
+.hdbox span,
+.hdbox a{letter-spacing:0.05rem;}
+.header .get_back{ width:0.75rem; height:2.4rem; background:url(../img/bg01.png) no-repeat center center;background-size:0.55rem auto}
+.header.hdbox{border-bottom:0.05rem solid #e3e3e3}
+.header .share{height:2.4rem;padding-right:0.9rem; font-size:0.75rem;color:#4d4948;background:url(../imags/share.png) no-repeat center right;background-size:0.6rem 0.6rem;}
+.box{ padding-bottom:3rem}
+.mt10{margin-top:0rem !important;}
+.box .imgbox img{ width:100%; margin-top:0rem}
+.box li{color:#323232; border-bottom:0.05rem solid #efeded;}
+.box li .hd{background:#fff;padding:0 1rem;height:2.2rem;line-height:2.2rem; }
+.box li .hd .textInput{background:#fff;padding:0 0.5rem;height:2rem;width:100%;line-height:2rem;border:0px;background-color:transparent;}
+.box li .hd .textcode{background:#fff;padding:0 0.5rem;height:2rem;width:50%;line-height:2rem;border:0px;background-color:transparent;}
+.box li .hd .get_code{background:#fff;padding:0 0.5rem;height:2rem;width:34%;line-height:2rem;color: #119ff0;border-left: 1px solid #cbcbcb;}
+.box .goreg{padding-top:0.75rem;height:2.2rem;line-height:2.2rem;color: #119ff0;}
+.box .goreg span{background:#3492ea;height:5rem;width:50%;line-height:5rem;color: #ffffff;}
+.box .goreg .hd{width:70%; background: #3492ea; color: #fff; text-align: center; margin: 0 auto;-webkit-border-radius:0.3rem;-moz-border-radius:0.3rem;border-radius:0.3rem;}
+.box .showMsg {width:100%;padding-top:0.75rem;height: 5rem;line-height:2.2rem;color: #000;text-align: center; margin: 0 auto;}
+.box .goregs{height:2.2rem;line-height:2.2rem;color: #119ff0;}

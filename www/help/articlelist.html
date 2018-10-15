@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>推广分享</title>
+	<meta charset="utf-8" /> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bgf">
+<section class="articlelist">
+    <ul id="ulbox">
+	    <li class="list"><a href="##">怎么体现？</a></li>
+		<li class="list"><a href="article.html">怎么充值？</a></li>
+		<li class="list"><a href="article.html">浙货宝是什么平台？</a></li>
+		<li class="list"><a href="article.html">体现需要手续费吗？</a></li>
+	</ul>    
+</section>
+<section id="article_bg" class="Popup_bg animated" style=" right:-100%">   
+    <div class="article">
+		<div class="hd rel"><span id="question">怎么提现？</span><span class="close"></span></div>
+		<div id="answer" class="bd">
+			 目前浙货宝APP金额可在“个人中心”提现。为保障您的资金安全，保证同卡进出，每张卡均设置“提现额度”。
+		</div>
+    </div>
+</section>
+<script src="js/jquery.min.js"></script>
+<script src="js/utils.js"></script>
+<script>
+$(function () {  
+    var CFG = window.qixiang.config;
+    var UTL = new window.qixiang.utils;  
+    UTL.sendPostData({},CFG.ApiUrl+'help',function(res){
+      // alert(res.code)
+	  if(res.code==1){
+	     var html="";
+		 var list=res.data;
+		 $.each(list, function (i, item) {
+			  html +='<li class="list" id='+item.id+'><span>'+item.question+'</span></li>';
+		 });
+		 $("#ulbox").html(html);
+		 
+		 //点击查看详情
+		 $(".list").click(function(){
+			 var id=$(this).attr('id');
+			// alert(id);
+			 UTL.sendPostData({id:id},CFG.ApiUrl+'help/detail',function(res){				
+				 if(res.code==1){
+					 $("#question").html(res.data.question);
+					 $("#answer").html(res.data.answer);
+					 $("#article_bg").css("right","0");
+					 UTL.addAnimate('#article_bg','slideOutRight','slideInRight');
+				 }
+			 });
+
+		});
+		 
+		 
+	  }
+    });
+	
+	$(".close").click(function(){
+	  $("#article_bg").css("right","-100%");
+	 // UTL.addAnimate('#article_bg','slideOutRight','slideInRight');
+	  UTL.addAnimate('#article_bg', 'slideOutLeft', 'slideInLeft',false,function(){
+		  $("#question").html('');
+		  $("#answer").html('')
+	  });
+	});
+    
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>推广分享</title>
+	<meta charset="utf-8" /> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/style.css">
+	 <style>
+       .pupbg{position:fixed;bottom:0;left:0;background:rgba(0, 0, 0, 0.6);z-index:999;width:100%;overflow:hidden;height:100%}
+       #bgbox{ text-align:right;display: none; }
+       #bgbox img{ max-width: 80%;}
+    </style>
+</head>
+<body class="bge">
+<section class="sharebox">
+        <div class="pic"><img src="img/bg_01.jpg"></div>
+        <a id="signbtn" class="btn" href="javascript:void(0);"></a>
+		<div class="msg t-c">		
+		</div>
+</section>
+<section id="bgbox" class="pupbg">
+       <img src="img/shareImage.png" id="share"/>
+</section>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#signbtn").click(function(){
+	    	goDownload();
+	    });
+	});
+    // 去下载
+    function goDownload() {
+        var u = navigator.userAgent, app = navigator.appVersion;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;
+        var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+        // 是微信内部webView
+        if (is_weixn() || is_Ali()) {
+        	$("#bgbox").show();
+        	return false;
+        }
+        // 是PC端
+        if (IsPC()) {
+            window.location.href = 'http://www.qixiangnet.com';  // 公司主页
+        }
+        // 是安卓浏览器
+        if (isAndroid) {
+        	//window.location.href = 'http://deqin.giftgo.cn/com.qixiangnet.deqin.apk'; // 跳安卓端下载地址
+        }
+        // 是iOS浏览器
+        if (isIOS) {
+        	window.location.href = 'https://itunes.apple.com/us/app/zhe-dai-bao/id1168972633?l=zh&ls=1&mt=8'; // 跳ios下载地址
+        }
+    }
+
+    // 是微信浏览器
+    function is_weixn(){
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // 是支付宝
+    function is_Ali(){
+        var ua = navigator.userAgent;
+        if(ua.match(/AliApp/i)=="AliApp") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone",
+            "SymbianOS", "Windows Phone",
+            "iPad", "iPod"];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+</script>
+</body>
+</html>

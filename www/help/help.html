@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.a
+		{
+
+			width:100px;
+			height:75px;
+			background-color:yellow;
+			border:1px solid black;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		.b
+		{
+			transform:scale(2,2);
+			-ms-transform:scale(2,2); /* IE 9 */
+			-moz-transform:scale(2,2); /* Firefox */
+			-webkit-transform:scale(2,2); /* Safari and Chrome */
+			-o-transform:scale(2,2); /* Opera */
+
+			position: absolute;
+			left: 100px;
+			top: 0;
+
+		}
+
+	</style>
+</head>
+<body>
+
+<div class="a">你好。这是一个 div 元素。</div>
+<div class="b">
+	<div id="mydiv" class="a" id="div2">你好。这是一个 div 元素。</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script>
+//	document.getElementById('mydiv').addEventListener('click',clickHandler,false);
+	function clickHandler(e,b){
+		console.log(this.id);
+		console.log(e.type);
+		console.log(typeof e);
+		console.log(typeof event);
+		console.log((e.constructor.name));
+	}
+
+	$('#mydiv').click(clickHandler)
+
+//var value = 1;
+//var Value = function(){
+//	console.log(111);
+//	this.ab = function(){
+//		console.log(222);
+//	}
+//	return this;
+//}
+//var a = function(){
+//	var x =  10;
+//	this.calculate = function(z) {
+//		return x + y + z
+//	}
+//};
+//
+//var b = function(){
+//	var y= 20
+//
+//};
+//
+//b.__proto__ = new a();
+//var c = function(){
+//	var y= 30;
+//
+//};
+//c.__proto__ = new a();
+//
+//// 调用继承过来的方法
+//var d = new b();
+//console.log(b.calculate(30)); // 60
+//console.log(c.calculate(40)); // 80
+
+function abc(){
+
+	this.a = 1;
+	return this.a;
+}
+var a = new abc();
+console.log(abc.prototype);
+console.log(abc.__proto__);
+console.log(a.__proto__);
+
+//var a = function(){
+//	var x =  10;
+//	this.calculate = function(z) {
+//		return x + y + z
+//	}
+//};
+//
+//var b = function(){
+//	var y= 20
+//
+//};
+//
+//b.__proto__ = new a();
+//var c = function(){
+//	var y= 30;
+//
+//};
+//c.__proto__ = new a();
+//
+//// 调用继承过来的方法
+//var d = new b();
+//console.log(b.calculate(30)); // 60
+//console.log(c.calculate(40)); // 80
+//var a = {
+//	x: 10,
+//	calculate: function (z) {
+//		return this.x + this.y + z
+//	}
+//};
+//
+//var b = {
+//	y: 20,
+//	__proto__: a
+//};
+//
+//var c = {
+//	y: 30,
+//	__proto__: a
+//};
+//
+//// 调用继承过来的方法
+//b.calculate(30); // 60
+//c.calculate(40); // 80
+
+
+
+</script>
+
+</body>
+</html>

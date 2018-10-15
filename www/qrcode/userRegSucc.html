@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>用户注册</title>
+	<meta charset="utf-8" /> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/reg.css">
+	<link rel="stylesheet" href="css/showtips.css">
+	<style>
+       .pupbg{position:fixed;bottom:0;left:0;background:rgba(0, 0, 0, 0.6);z-index:999;width:100%;overflow:hidden;height:100%}
+       #bgbox{ text-align:right; }
+       #bgbox img{ max-width: 80%;}
+	</style>
+</head>
+<body class="bge">
+<header>
+    <div class="hdbox header order_hd c-fix">
+        <!-- <a class="get_back f-l"></a> -->
+        <h3 class="shop_name">用户注册</h3>
+
+    </div>
+</header>
+<section id="bgbox" class="pupbg">
+        <img src="img/shareImage.png" id="share"/>
+</section>
+<section class="box">
+    <div class="imgbox" id="topImgage">
+	    <img src="img/regtop.png">
+	</div>
+	<div class="imgbox" style="display:none;" id="regtopImgage">
+	     <img src="img/regtop1.png">
+	</div>
+	
+	<!-- <ul class="mt10" id="regErr">
+	   <li class="list">
+	       <div class="hd"><input class="textInput" type="text" name="mobile" id="mobile" placeholder="请输入手机号码"/></div>
+	   </li>
+	   <li class="list">
+	       <div class="hd">
+	       		<input class="textcode"  type="text" name="code" id="code" placeholder="请输入验证码"/>
+	       			<span class="get_code" id="get_code">获取验证码</span>
+	       			<span class="get_code" id="showTime" style="display:none;">232</span>
+	       	</div>
+	   </li>
+	   <li class="list">
+	       <div class="hd"><input class="textInput" type="password" name="psw" id="psw" placeholder="请输入密码(6-16位字符)"/></div>
+	   </li>
+	   <li class="list goreg" style="border-bottom:0.0rem solid #fff;">
+	       <div class="hd" id="gouserreg">立即注册</div>
+	   </li>
+	</ul> -->
+
+	<ul class="mt10" id="regSuss">
+	   <div class="showMsg">
+			<span>您已成功注册，快去登录吧~~~</span>
+	   </div>
+	   <div class="goreg" id="godow">
+			<div class="hd">下载APP</div>
+	   </div>
+	</ul>
+</section>
+<script src="js/jquery.min.js"></script>
+<script src="js/showTip.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/userReg.js"></script>
+<script>
+$(function(){
+	var CFG = window.qixiang.config;
+    var UTL = new window.qixiang.utils;
+    // 是支付宝
+    function is_Ali(){
+        var ua = navigator.userAgent;
+        if(ua.match(/AliApp/i)=="AliApp") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+	if (!UTL.isWeiXin() && !is_Ali()) {
+		$("#bgbox").hide();
+	}
+	//下载APP
+	$("#godow").click(function(){
+		var client_type = getUserAgent();
+		if (client_type==1) {
+			window.location.href = "http://mahjong.qixiangnet.com/apk/com.qixiang.mahjong.weixiu.apk";
+		}else{
+			window.location.href = "https://itunes.apple.com/us/app/kuai-que-wei-xiu/id1160113099?l=zh&ls=1&mt=8";
+		}
+	})
+})
+</script>
+</body>
+</html>
