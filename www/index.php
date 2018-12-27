@@ -37,7 +37,6 @@ switch (ENVIRONMENT) {
 define('BASE_ROOT_PATH', str_replace('\\', '/', dirname(__FILE__)));
 $_root_dir = dirname(BASE_ROOT_PATH);
 
-
 $system_path = $_root_dir . '/system';
 
 $application_folder = $_root_dir . '/application';
