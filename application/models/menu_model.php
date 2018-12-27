@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Menu_model extends XT_Model {
 
-	protected $mTable = 'sys_menu';
+	protected $mTable = 'change_sys_menu';
 
 	protected $cachedData;
 	

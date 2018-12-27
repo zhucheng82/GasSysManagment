@@ -14,9 +14,7 @@ class Welcome extends MY_Admin_Controller{
 
 	public function index()
 	{
-		//echo '欢迎来到浙贷宝后台管理中心';
-        $this->load->view('admin/home/apply_statistics',array('borrowingStatus'=>config_item('BorrowingStatus')));
-
+        $this->load->view('admin/home/meter',array('borrowingStatus'=>config_item('BorrowingStatus')));
 	}
 
     public function delayStatistics()

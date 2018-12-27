@@ -12,7 +12,7 @@ class Home extends CI_Controller
 
     public function index()
     {
-
+//phpinfo();exit();
 //        $this->load->view('home');
         redirect(ADMIN_SITE_URL);
     }

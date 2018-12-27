@@ -2,8 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-$lang['login_index_title_01']					= '';
-$lang['login_index_title_02']					= '平台管理中心';
+$lang['login_index_title_01']					= '南京金昇能源';
+$lang['login_index_title_02']					= '后台管理中心';
 $lang['login_index_title_03']					= '商城';	//&nbsp;&nbsp;|&nbsp;&nbsp;资讯&nbsp;&nbsp;|&nbsp;&nbsp;圈子&nbsp;&nbsp;|&nbsp;&nbsp;微商城&nbsp;&nbsp;|&nbsp;&nbsp;统计
 $lang['login_index_username_null']				= '用户名不能为空';
 $lang['login_index_password_null']				= '密码不能为空';

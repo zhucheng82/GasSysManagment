@@ -20,6 +20,13 @@ class Login extends CI_Controller
 
     public function index()
     {
+//        $this->load->model('Admin_model');
+//        //查询商家表信息
+//        $user_name = 'admin';
+//        $adminInfo =	$this->Admin_model->get_by_where("name='$user_name'");
+
+//        echo $this->Admin_model->db->last_query();exit();
+//        var_dump($adminInfo);exit();
         $this->lang->load('admin_login');
         $this->load->view('admin/login');
     }
@@ -72,7 +79,6 @@ class Login extends CI_Controller
             //查询商家表信息
             $adminInfo =	$this->Admin_model->get_by_where("name='$user_name'");
 
-
             //判断用户名是否正确
             if(empty($adminInfo)) {
                 $arrRes['code'] = '-1';
@@ -92,7 +98,7 @@ class Login extends CI_Controller
 
             $this->load->library('encrypt');
             $this->load->library('session');
-            $user = array('admin_name'=>$adminInfo['name'], 'admin_id'=>$adminInfo['id'],'role_id'=>$adminInfo['role_id'],'type'=>$adminInfo['type'],'limits' =>$adminInfo['limits']);
+            $user = array('admin_name'=>$adminInfo['name'], 'admin_id'=>$adminInfo['id'],'role_id'=>$adminInfo['role_id'],'type'=>$adminInfo['type'],'limits' =>$adminInfo['limits'], 'level'=>$adminInfo['level']);
             //$this->session('sys_key',$this->encrypt->encode(serialize($user),C('basic_info.MD5_KEY')),36000);
             $this->session->set_userdata('sys_key',$this->encrypt->encode(serialize($user),C('basic_info.MD5_KEY')),36000);
             output_data(array('url' =>ADMIN_SITE_URL));

@@ -10,8 +10,6 @@
 <div class="login-layout">
     <div class="top">
 
-        <?php echo _get_cfg_path('admin').TPL_ADMIN_NAME;?>
-
         <h5><?php echo lang('login_index_title_01');?><em></em></h5>
         <h2><?php echo lang('login_index_title_02');?></h2>
     </div>
